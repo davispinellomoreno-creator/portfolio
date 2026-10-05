@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Projeto Exemplo 1",
+    "description": "Descrição curta do projeto: o que ele faz e qual problema resolve.",
+    "image": "assets/img/projects/placeholder.svg",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "repo": "https://github.com/SEU-USUARIO/projeto-1",
+    "demo": "https://projeto-1.vercel.app"
+  },
+  {
+    "title": "Projeto Exemplo 2",
+    "description": "API REST com autenticação e banco de dados.",
+    "image": "assets/img/projects/placeholder.svg",
+    "tags": ["Node.js", "API"],
+    "repo": "https://github.com/SEU-USUARIO/projeto-2",
+    "demo": ""
+  },
+  {
+    "title": "Projeto Exemplo 3",
+    "description": "Aplicação web consumindo uma API pública.",
+    "image": "assets/img/projects/placeholder.svg",
+    "tags": ["JavaScript", "API"],
+    "repo": "https://github.com/SEU-USUARIO/projeto-3",
+    "demo": "https://seu-usuario.github.io/projeto-3"
+  }
+]

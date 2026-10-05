@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Davi Pinello | Portfólio</title>
+  <meta name="description" content="Portfólio com meus projetos de programação." />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/projects.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">&lt;DP /&gt;</a>
+      <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <ul class="nav__links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><button class="theme-toggle" aria-label="Alternar tema">◐</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="inicio">
+      <p class="hero__greeting">Olá, eu sou</p>
+      <h1 class="hero__title">Davi Pinello</h1>
+      <p class="hero__subtitle">Desenvolvedor — aqui estão todos os meus projetos de programação.</p>
+      <a href="#projetos" class="btn">Ver projetos</a>
+    </section>
+
+    <section class="section container" id="sobre">
+      <h2 class="section__title">Sobre mim</h2>
+      <p>Escreva aqui um breve resumo sobre você, suas tecnologias favoritas e o que está estudando.</p>
+    </section>
+
+    <section class="section container" id="projetos">
+      <h2 class="section__title">Projetos</h2>
+      <div class="filters" role="group" aria-label="Filtrar projetos"></div>
+      <div class="projects-grid" aria-live="polite">
+        <p class="projects-grid__status">Carregando projetos...</p>
+      </div>
+    </section>
+
+    <section class="section container" id="contato">
+      <h2 class="section__title">Contato</h2>
+      <ul class="contact">
+        <li><a href="mailto:davispinellomoreno@gmail.com">E-mail</a></li>
+        <li><a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Davi Pinello. Feito com HTML, CSS e JavaScript.</p>
+  </footer>
+</body>
+</html>
