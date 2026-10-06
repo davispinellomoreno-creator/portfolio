@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Davi Pinello | Portfólio</title>
-  <meta name="description" content="Portfólio com meus projetos de programação." />
+  <meta name="description" content="Portfólio de Davi Pinello — desenvolvedor Full Stack." />
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" />
   <link rel="stylesheet" href="assets/css/reset.css" />
   <link rel="stylesheet" href="assets/css/variables.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -13,52 +16,292 @@
   <script src="assets/js/projects.js" defer></script>
 </head>
 <body>
+  <!-- Ícones (sprite SVG reutilizável) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></symbol>
+      <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+      <symbol id="i-user-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M6.2 18.7a7 7 0 0 1 11.6 0"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 18 9.5a4 4 0 0 1-.5 8.5z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-7M12 13a3 3 0 0 1 6 0v4"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ================= HEADER ================= -->
   <header class="header">
-    <nav class="nav container">
-      <a href="#" class="nav__logo">&lt;DP /&gt;</a>
-      <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="nav container" aria-label="Principal">
+      <button class="icon-btn nav__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="icon"><use href="#i-menu"/></svg>
+      </button>
+
+      <a href="#inicio" class="nav__logo">[ Dev.Pinello ]<span class="nav__cursor" aria-hidden="true"></span></a>
+
       <ul class="nav__links">
+        <li><a href="#inicio" data-section="inicio">Início</a></li>
+        <li><a href="#sobre" data-section="sobre">Sobre</a></li>
+        <li><a href="#projetos" data-section="projetos">Projetos</a></li>
+        <li><a href="#habilidades" data-section="habilidades">Habilidades</a></li>
+        <li><a href="#contato" data-section="contato">Contato</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="icon-btn icon-btn--ghost theme-toggle" aria-label="Alternar tema" title="Alternar tema">
+          <svg class="icon"><use href="#i-sun"/></svg>
+        </button>
+        <button class="icon-btn icon-btn--ghost share-btn" aria-label="Compartilhar" title="Compartilhar">
+          <svg class="icon"><use href="#i-share"/></svg>
+        </button>
+        <span class="nav__divider" aria-hidden="true"></span>
+        <span class="nav__version">Portfólio<strong>v1.0.0</strong></span>
+        <a href="#contato" class="avatar-btn" aria-label="Contato">
+          <svg class="icon"><use href="#i-user"/></svg>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Menu lateral (mobile) -->
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><button class="theme-toggle" aria-label="Alternar tema">◐</button></li>
       </ul>
-    </nav>
+      <div class="mobile-menu__actions">
+        <button class="btn btn--secondary theme-toggle">
+          <svg class="icon"><use href="#i-sun"/></svg> Alternar tema
+        </button>
+        <button class="btn btn--secondary share-btn">
+          <svg class="icon"><use href="#i-share"/></svg> Compartilhar
+        </button>
+      </div>
+    </div>
   </header>
 
   <main>
+    <!-- ================= HERO ================= -->
     <section class="hero container" id="inicio">
-      <p class="hero__greeting">Olá, eu sou</p>
-      <h1 class="hero__title">Davi Pinello</h1>
-      <p class="hero__subtitle">Desenvolvedor — aqui estão todos os meus projetos de programação.</p>
-      <a href="#projetos" class="btn">Ver projetos</a>
+      <div class="hero__content">
+        <span class="badge"><span class="badge__dot"></span>Disponível para novos projetos</span>
+
+        <h1 class="hero__title">Olá, sou <span class="text-accent">Davi Pinello.</span></h1>
+        <p class="hero__role">Desenvolvedor Full Stack</p>
+        <p class="hero__description">
+          Construindo aplicações web de alta performance, arquiteturas escaláveis e
+          interfaces intuitivas com foco em excelência técnica e manutenibilidade.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#projetos" class="btn btn--primary">
+            Ver projetos
+            <svg class="icon icon--sm only-desktop"><use href="#i-arrow-right"/></svg>
+            <svg class="icon icon--sm only-mobile"><use href="#i-arrow-down"/></svg>
+          </a>
+          <a href="assets/cv.pdf" class="btn btn--secondary" download>
+            <svg class="icon icon--sm"><use href="#i-download"/></svg>
+            Baixar CV
+          </a>
+
+          <span class="hero__divider" aria-hidden="true"></span>
+
+          <div class="social">
+            <a href="https://github.com/SEU-USUARIO" class="icon-btn" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg class="icon icon--sm"><use href="#i-github"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/SEU-USUARIO" class="icon-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg class="icon icon--sm"><use href="#i-linkedin"/></svg>
+            </a>
+            <a href="mailto:davispinellomoreno@gmail.com" class="icon-btn" aria-label="E-mail">
+              <svg class="icon icon--sm"><use href="#i-mail"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sua foto: coloque o arquivo em assets/img/foto.jpg -->
+      <div class="hero__photo">
+        <div class="photo-frame">
+          <img src="assets/img/foto.jpg" alt="Foto de Davi Pinello" width="360" height="360"
+               onerror="this.onerror=null;this.src='assets/img/foto-placeholder.svg'" />
+        </div>
+      </div>
     </section>
 
+    <!-- ================= SOBRE ================= -->
     <section class="section container" id="sobre">
-      <h2 class="section__title">Sobre mim</h2>
-      <p>Escreva aqui um breve resumo sobre você, suas tecnologias favoritas e o que está estudando.</p>
+      <h2 class="section__title"><span class="section__index">01. //</span> Sobre mim</h2>
+
+      <div class="about">
+        <!-- Card "terminal" (desktop) / avatar circular (mobile) -->
+        <div class="terminal-card">
+          <div class="terminal-card__bar">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="terminal-card__file">dev_avatar.sys</span>
+          </div>
+          <div class="terminal-card__screen">
+            <div class="terminal-card__icon">
+              <svg class="icon icon--lg"><use href="#i-terminal"/></svg>
+            </div>
+            <span class="terminal-card__status">SYS_READY</span>
+          </div>
+          <div class="terminal-card__footer">
+            <span>ROLE: FULLSTACK_DEV</span>
+            <span class="text-accent">ONLINE</span>
+          </div>
+        </div>
+
+        <div class="about-avatar" aria-hidden="true">
+          <svg class="icon icon--xl"><use href="#i-user-circle"/></svg>
+          <img src="assets/img/foto.jpg" alt="" onerror="this.remove()" />
+          <span class="about-avatar__badge"><svg class="icon icon--xs"><use href="#i-terminal"/></svg></span>
+        </div>
+
+        <div class="about__content">
+          <p class="about__text">
+            Desenvolvo soluções completas de ponta a ponta, da concepção da arquitetura
+            até interfaces refinadas e acessíveis. Apaixonado por código limpo,
+            TypeScript, ecossistema Node.js e React.
+          </p>
+
+          <ul class="stats">
+            <li class="stat">
+              <span class="stat__icon"><svg class="icon icon--sm"><use href="#i-clock"/></svg></span>
+              <div class="stat__body">
+                <span class="stat__label">01 / Tempo</span>
+                <strong class="stat__value">2+ Anos</strong>
+                <span class="stat__desc">Anos de experiência</span>
+              </div>
+              <span class="stat__tag">Dev</span>
+            </li>
+            <li class="stat">
+              <span class="stat__icon"><svg class="icon icon--sm"><use href="#i-pin"/></svg></span>
+              <div class="stat__body">
+                <span class="stat__label">02 / Base</span>
+                <strong class="stat__value">Brasil</strong>
+                <span class="stat__desc">Remoto / Híbrido</span>
+              </div>
+              <span class="stat__tag">GMT-3</span>
+            </li>
+            <li class="stat">
+              <span class="stat__icon"><svg class="icon icon--sm"><use href="#i-cloud"/></svg></span>
+              <div class="stat__body">
+                <span class="stat__label">03 / Foco</span>
+                <strong class="stat__value">Web &amp; Cloud</strong>
+                <span class="stat__desc">Arquitetura de sistemas</span>
+              </div>
+              <span class="stat__tag">Full Stack</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
+    <!-- ================= PROJETOS ================= -->
     <section class="section container" id="projetos">
-      <h2 class="section__title">Projetos</h2>
+      <h2 class="section__title"><span class="section__index">02. //</span> Projetos</h2>
       <div class="filters" role="group" aria-label="Filtrar projetos"></div>
       <div class="projects-grid" aria-live="polite">
         <p class="projects-grid__status">Carregando projetos...</p>
       </div>
     </section>
 
+    <!-- ================= HABILIDADES ================= -->
+    <section class="section container" id="habilidades">
+      <h2 class="section__title"><span class="section__index">03. //</span> Habilidades</h2>
+
+      <div class="skills">
+        <article class="skill-card">
+          <header class="skill-card__header">
+            <span class="stat__icon"><svg class="icon icon--sm"><use href="#i-code"/></svg></span>
+            <h3>Front-end</h3>
+          </header>
+          <ul class="chips">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li>
+          </ul>
+        </article>
+        <article class="skill-card">
+          <header class="skill-card__header">
+            <span class="stat__icon"><svg class="icon icon--sm"><use href="#i-cpu"/></svg></span>
+            <h3>Back-end</h3>
+          </header>
+          <ul class="chips">
+            <li>Node.js</li><li>Express</li><li>APIs REST</li><li>SQL</li>
+          </ul>
+        </article>
+        <article class="skill-card">
+          <header class="skill-card__header">
+            <span class="stat__icon"><svg class="icon icon--sm"><use href="#i-terminal"/></svg></span>
+            <h3>Ferramentas</h3>
+          </header>
+          <ul class="chips">
+            <li>Git</li><li>GitHub Actions</li><li>Vercel</li><li>VS Code</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= CONTATO ================= -->
     <section class="section container" id="contato">
-      <h2 class="section__title">Contato</h2>
+      <h2 class="section__title"><span class="section__index">04. //</span> Contato</h2>
+      <p class="contact__intro">Tem um projeto em mente ou quer conversar? Me chame por qualquer um destes canais.</p>
+
       <ul class="contact">
-        <li><a href="mailto:davispinellomoreno@gmail.com">E-mail</a></li>
-        <li><a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li>
+          <a class="contact-card" href="mailto:davispinellomoreno@gmail.com">
+            <span class="stat__icon"><svg class="icon icon--sm"><use href="#i-mail"/></svg></span>
+            <span class="contact-card__body"><strong>E-mail</strong><span>davispinellomoreno@gmail.com</span></span>
+            <svg class="icon icon--sm contact-card__arrow"><use href="#i-arrow-right"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="contact-card" href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener">
+            <span class="stat__icon"><svg class="icon icon--sm"><use href="#i-github"/></svg></span>
+            <span class="contact-card__body"><strong>GitHub</strong><span>@SEU-USUARIO</span></span>
+            <svg class="icon icon--sm contact-card__arrow"><use href="#i-external"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="contact-card" href="https://linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener">
+            <span class="stat__icon"><svg class="icon icon--sm"><use href="#i-linkedin"/></svg></span>
+            <span class="contact-card__body"><strong>LinkedIn</strong><span>in/SEU-USUARIO</span></span>
+            <svg class="icon icon--sm contact-card__arrow"><use href="#i-external"/></svg>
+          </a>
+        </li>
       </ul>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer container">
     <p>© <span id="year"></span> Davi Pinello. Feito com HTML, CSS e JavaScript.</p>
   </footer>
+
+  <!-- ================= TAB BAR (mobile) ================= -->
+  <nav class="tabbar" aria-label="Navegação rápida">
+    <a href="#inicio" data-section="inicio"><svg class="icon"><use href="#i-home"/></svg>Início</a>
+    <a href="#sobre" data-section="sobre"><svg class="icon"><use href="#i-terminal"/></svg>Sobre</a>
+    <a href="#projetos" data-section="projetos"><svg class="icon"><use href="#i-box"/></svg>Projetos</a>
+    <a href="#habilidades" data-section="habilidades"><svg class="icon"><use href="#i-cpu"/></svg>Habilidades</a>
+    <a href="#contato" data-section="contato"><svg class="icon"><use href="#i-mail"/></svg>Contato</a>
+  </nav>
+
+  <div class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

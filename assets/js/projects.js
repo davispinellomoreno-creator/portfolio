@@ -51,14 +51,14 @@ function createCard({ title, description, image, tags, repo, demo }) {
     <article class="project-card">
       <img class="project-card__image" src="${image}" alt="${title}" loading="lazy" />
       <div class="project-card__body">
-        <h3>${title}</h3>
+        <h3 class="project-card__title">${title}</h3>
         <p class="project-card__description">${description}</p>
         <div class="project-card__tags">
           ${tags.map((t) => `<span class="tag">${t}</span>`).join("")}
         </div>
         <div class="project-card__links">
-          ${repo ? `<a href="${repo}" target="_blank" rel="noopener">Código</a>` : ""}
-          ${demo ? `<a href="${demo}" target="_blank" rel="noopener">Demo</a>` : ""}
+          ${repo ? `<a class="btn btn--secondary" href="${repo}" target="_blank" rel="noopener"><svg class="icon icon--sm"><use href="#i-github"/></svg>Código</a>` : ""}
+          ${demo ? `<a class="btn btn--secondary" href="${demo}" target="_blank" rel="noopener"><svg class="icon icon--sm"><use href="#i-external"/></svg>Demo</a>` : ""}
         </div>
       </div>
     </article>
