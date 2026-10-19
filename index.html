@@ -12,8 +12,10 @@
   <link rel="stylesheet" href="assets/css/reset.css" />
   <link rel="stylesheet" href="assets/css/variables.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/portfolio.css" />
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/projects.js" type="module"></script>
+  <script src="assets/js/portfolio.js" type="module"></script>
 </head>
 <body>
   <!-- Ícones (sprite SVG reutilizável) -->
@@ -57,6 +59,7 @@
         <li><a href="#inicio" data-section="inicio">Início</a></li>
         <li><a href="#destaques" data-section="destaques">Destaques</a></li>
         <li><a href="#projetos" data-section="projetos">Projetos</a></li>
+        <li><a href="#portfolio" data-section="portfolio">Portfólio</a></li>
         <li><a href="#sobre" data-section="sobre">Sobre</a></li>
         <li><a href="#contato" data-section="contato">Contato</a></li>
       </ul>
@@ -82,6 +85,7 @@
         <li><a href="#inicio">Início</a></li>
         <li><a href="#destaques">Destaques</a></li>
         <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
@@ -161,9 +165,25 @@
       </div>
     </section>
 
+    <!-- ================= PORTFÓLIO (abas + cartas sobrepostas + modal) ================= -->
+    <section class="section container" id="portfolio">
+      <h2 class="section__title"><span class="section__index">03. //</span> Portfólio</h2>
+      <div class="portfolio">
+        <div class="pf-panel">
+          <div class="pf-panel__info"></div>
+          <div class="pf-tabs" role="tablist" aria-label="Categorias do portfólio"></div>
+        </div>
+        <div class="pf-stage" id="pf-stage" role="tabpanel" aria-describedby="pf-desc">
+          <noscript><p class="projects-grid__status">Ative o JavaScript para ver o portfólio.</p></noscript>
+          <ul class="pf-deck"></ul>
+        </div>
+      </div>
+      <p class="pf-status sr-only" role="status"></p>
+    </section>
+
     <!-- ================= SOBRE / STACK ================= -->
     <section class="section container" id="sobre">
-      <h2 class="section__title"><span class="section__index">03. //</span> Sobre &amp; Stack</h2>
+      <h2 class="section__title"><span class="section__index">04. //</span> Sobre &amp; Stack</h2>
 
       <div class="about">
         <!-- Card "terminal" (desktop) / avatar circular (mobile) -->
@@ -263,7 +283,7 @@
 
     <!-- ================= CONTATO ================= -->
     <section class="section container" id="contato">
-      <h2 class="section__title"><span class="section__index">04. //</span> Contato</h2>
+      <h2 class="section__title"><span class="section__index">05. //</span> Contato</h2>
       <p class="contact__intro">Tem um projeto em mente ou quer conversar? Me chame por qualquer um destes canais.</p>
 
       <ul class="contact">
@@ -301,6 +321,7 @@
     <a href="#inicio" data-section="inicio"><svg class="icon"><use href="#i-home"/></svg>Início</a>
     <a href="#destaques" data-section="destaques"><svg class="icon"><use href="#i-cpu"/></svg>Destaques</a>
     <a href="#projetos" data-section="projetos"><svg class="icon"><use href="#i-box"/></svg>Projetos</a>
+    <a href="#portfolio" data-section="portfolio"><svg class="icon"><use href="#i-file"/></svg>Portfólio</a>
     <a href="#sobre" data-section="sobre"><svg class="icon"><use href="#i-terminal"/></svg>Sobre</a>
     <a href="#contato" data-section="contato"><svg class="icon"><use href="#i-mail"/></svg>Contato</a>
   </nav>
