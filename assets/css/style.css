@@ -1091,7 +1091,7 @@ html {
     inset: auto 0 0 0;
     z-index: 20;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     height: var(--tabbar-h);
     background: color-mix(in srgb, var(--color-bg) 92%, transparent);
     backdrop-filter: blur(10px);
