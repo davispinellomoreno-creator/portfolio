@@ -6,10 +6,9 @@ Site de portfólio pessoal com meus projetos de programação, feito com HTML, C
 
 1. **Hero** — nome, título, frase curta e CTAs para "Ver projetos" e "Contato".
 2. **Projetos em destaque** — até 3 projetos com `featured: true`, em cards maiores.
-3. **Todos os projetos** — listagem com filtro por categoria: `Todos` · `Full Stack` · `IA & Automação` · `Landing Pages`.
-4. **Portfólio** — painel de categorias em abas + cartas de projeto sobrepostas; clicar numa carta abre um modal com galeria.
-5. **Sobre & Stack** — bio e tecnologias.
-6. **Contato** — e-mail, GitHub e LinkedIn.
+3. **Portfólio** — painel de categorias em abas + cartas de projeto sobrepostas; clicar numa carta abre um modal com galeria.
+4. **Sobre & Stack** — bio e tecnologias.
+5. **Contato** — e-mail, GitHub e LinkedIn.
 
 ## Estrutura
 
@@ -26,13 +25,11 @@ Site de portfólio pessoal com meus projetos de programação, feito com HTML, C
 │   │   └── portfolio.css         # Estilos da seção Portfólio (cartas + modal)
 │   ├── js/
 │   │   ├── main.js               # Menu mobile, tema, compartilhar, ano do rodapé
-│   │   ├── projects.js           # Liga dados, filtro, listagem e URL
+│   │   ├── projects.js           # Liga os dados aos Projetos em destaque
 │   │   ├── portfolio.js          # Liga os dados da seção Portfólio
 │   │   ├── utils.js              # escapeHtml e prefers-reduced-motion
 │   │   └── components/
 │   │       ├── ProjectCard.js       # Card (full, compact, featured) + demos em vídeo/GIF
-│   │       ├── ProjectFilter.js     # Chips de filtro
-│   │       ├── ProjectGrid.js       # Listagem agrupada por categoria
 │   │       ├── FeaturedProjects.js  # Projetos em destaque
 │   │       └── portfolio/
 │   │           ├── PortfolioSection.js  # Junta abas, cartas e modal; transição entre categorias
