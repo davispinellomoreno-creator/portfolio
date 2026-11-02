@@ -1,0 +1,92 @@
+/* =================================================
+   Tema Evertechgg — paleta da logo (verde neon + preto)
+   Ativado por <html data-brand="evertech"> na página empresa.html
+   ================================================= */
+:root[data-brand="evertech"] {
+  --color-bg: #070907;
+  --color-bg-elevated: #0b0e0a;
+  --color-surface: #10140f;
+  --color-surface-2: #172015;
+  --color-text: #ecf7e6;
+  --color-muted: #9daa97;
+  --color-subtle: #67735f;
+  --color-primary: #66ff2a;
+  --color-primary-hover: #85ff57;
+  --color-accent: #7dff4a;
+  --color-on-primary: #050705;
+  --color-border: #1e281b;
+  --color-success: #66ff2a;
+  --shadow: 0 8px 30px rgb(0 0 0 / 0.5);
+}
+
+:root[data-brand="evertech"][data-theme="light"] {
+  --color-bg: #f3faef;
+  --color-bg-elevated: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-2: #e6f4de;
+  --color-text: #0a0f09;
+  --color-muted: #4b5845;
+  --color-subtle: #7a8873;
+  --color-primary: #66ff2a;
+  --color-primary-hover: #57e621;
+  /* Verde escuro para texto: o neon não tem contraste sobre fundo claro */
+  --color-accent: #1d7300;
+  --color-on-primary: #050705;
+  --color-border: #d3e5ca;
+  --color-success: #2ea800;
+  --shadow: 0 8px 30px rgb(0 0 0 / 0.08);
+}
+
+/* Cores fixas do tema padrão que precisam acompanhar a marca */
+[data-brand="evertech"] .avatar-btn {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+[data-brand="evertech"] .dots i:nth-child(1) { background: #66ff2a; }
+[data-brand="evertech"] .dots i:nth-child(2) { background: #3fa81a; }
+[data-brand="evertech"] .dots i:nth-child(3) { background: #24401a; }
+
+[data-brand="evertech"] .photo-frame {
+  background: conic-gradient(from 210deg, var(--color-primary), #0a0f09, transparent 60%, var(--color-primary));
+}
+
+/* ---------- Logo no cabeçalho ---------- */
+.nav__brand-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* ---------- Hero: moldura quadrada para a logo ---------- */
+.photo-frame--brand {
+  border-radius: 28px;
+}
+
+.photo-frame--brand img {
+  border-radius: 22px;
+}
+
+/* ---------- Avatar (mobile) com a logo ---------- */
+[data-brand="evertech"] .about-avatar img {
+  border-radius: 50%;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 860px) {
+  [data-brand="evertech"] .btn--primary,
+  [data-brand="evertech"] .btn--primary:hover {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+}
+
+/* ---------- Cards de serviços ---------- */
+.skill-card .about__text {
+  font-size: 0.9rem;
+}
+
+.skill-card .about__text + .chips {
+  margin-top: 1rem;
+}

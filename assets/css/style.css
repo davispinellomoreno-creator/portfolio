@@ -180,6 +180,21 @@ html {
   opacity: 1;
 }
 
+/* Link para a página da empresa (Evertechgg) com um marcador verde da marca */
+.nav__link--brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav__link--brand::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  background: #66ff2a;
+}
+
 .nav__actions {
   display: flex;
   align-items: center;
