@@ -10,23 +10,29 @@ Site de portfólio pessoal com meus projetos de programação, feito com HTML, C
 4. **Sobre & Stack** — bio e tecnologias.
 5. **Contato** — e-mail, GitHub e LinkedIn.
 
+O cabeçalho também tem a aba **Empresa**, que leva para a página da Evertechgg (veja [Página da empresa](#página-da-empresa-evertechgg)).
+
 ## Estrutura
 
 ```
 ├── index.html                    # Página principal
+├── empresa.html                  # Página da empresa (Evertechgg)
 ├── data/
 │   ├── projects.js               # Lista de projetos e categorias (edite aqui!)
-│   └── portfolio.js              # Projetos e categorias da seção Portfólio
+│   ├── portfolio.js              # Projetos e categorias da seção Portfólio
+│   └── empresa.js                # Projetos e categorias do portfólio da Evertechgg
 ├── assets/
 │   ├── css/
 │   │   ├── reset.css             # Reset básico
 │   │   ├── variables.css         # Cores, fontes, tema claro/escuro
 │   │   ├── style.css             # Estilos da página
-│   │   └── portfolio.css         # Estilos da seção Portfólio (cartas + modal)
+│   │   ├── portfolio.css         # Estilos da seção Portfólio (cartas + modal)
+│   │   └── empresa.css           # Tema Evertechgg (verde neon + preto) da empresa.html
 │   ├── js/
 │   │   ├── main.js               # Menu mobile, tema, compartilhar, ano do rodapé
 │   │   ├── projects.js           # Liga os dados aos Projetos em destaque
 │   │   ├── portfolio.js          # Liga os dados da seção Portfólio
+│   │   ├── empresa.js            # Liga os dados do portfólio da Evertechgg
 │   │   ├── utils.js              # escapeHtml e prefers-reduced-motion
 │   │   └── components/
 │   │       ├── ProjectCard.js       # Card (full, compact, featured) + demos em vídeo/GIF
@@ -38,6 +44,7 @@ Site de portfólio pessoal com meus projetos de programação, feito com HTML, C
 │   │           └── ProjectModal.js      # <dialog> com galeria, foco preso, Esc/clique fora
 │   └── img/
 │       ├── favicon.svg
+│       ├── evertechgg-logo.png   # Logo da Evertechgg (512×512)
 │       └── projects/             # Capas e demos dos projetos
 ├── vercel.json                   # Configuração de deploy na Vercel
 └── .github/workflows/
@@ -113,6 +120,18 @@ Edite `data/portfolio.js`. Para um projeto novo, adicione um objeto a `portfolio
 - **Categoria nova:** adicione `{ id, label, descricao }` a `portfolioCategorias`. Ela vira uma aba assim que tiver pelo menos um projeto.
 - **Exemplos:** os projetos atuais são fictícios e têm `exemplo: true` (etiqueta "Exemplo"). Remova o campo ao usar dados reais.
 - **Layout:** no desktop com mouse (≥1024px) as cartas ficam sobrepostas e revelam prévia e introdução no hover ou foco. No tablet/celular viram um carrossel com scroll-snap. Funcionam bem de 3 a 5 cartas por categoria.
+
+## Página da empresa (Evertechgg)
+
+`empresa.html` usa a mesma estrutura e os mesmos componentes do portfólio, com outra paleta de cores.
+
+**Seções:** Início (logo + chamada) → Serviços → Portfólio da empresa (abas + cartas + modal) → Sobre a Evertechgg → Contato. Há links de volta para o portfólio pessoal no cabeçalho, no menu mobile, na tab bar e no rodapé.
+
+**Tema:** a página tem `data-brand="evertech"` no `<html>`. O `empresa.css` sobrescreve só as variáveis de cor de `variables.css` (verde `#66ff2a` + preto), nos temas escuro e claro. No claro, o texto de destaque usa um verde escuro (`#1d7300`) para manter o contraste. Nenhum outro CSS precisa mudar.
+
+**Projetos:** edite `data/empresa.js` (`empresaCategorias` e `empresaProjetos`). O formato é o mesmo de `data/portfolio.js`, então vale o que está em [Seção Portfólio](#seção-portfólio). Os projetos atuais são exemplos (`exemplo: true`).
+
+**Links de contato:** Instagram (`@evertechgg`), LinkedIn (`company/evertechgg`) e GitHub (`SEU-USUARIO`) ainda são provisórios. Troque pelos reais em `empresa.html`.
 
 ## Rodando localmente
 
